@@ -1071,8 +1071,6 @@ max-width: calc(20% - 1px);
 
 .copyright {
 text-align: center;
-font-size: 11px;
+font-size: 10px;
 color: #dd33ff;
-margin-top: -20px;
-margin-bottom: 20px;
 }
