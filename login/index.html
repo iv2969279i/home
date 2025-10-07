@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>サービス提供者ログイン | HAYAI™プラットフォーム</title>
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div style="text-align: center;">
+    <img src="../img/logo.png" width="250" height="50" style="max-width: 100%; height: auto;">
+  </div>
+
+  <h1 style="text-align: center;">サービス提供者ログイン</h1>
+  <hr>
+  <div style="max-width: 1024px; margin: 1rem auto; line-height: 1.8; font-size: 1rem; text-align: left; padding: 0 1rem;">
+    資格審査に合格されたメールアドレスとパスワードをご入力ください。<br>
+    正式なメンバーとして承認されるまで、管理画面へのログイン権限は付与されません。<br>
+    ご不便をおかけしますが、何卒ご理解賜りますようお願い申し上げます。
+  </div>
+
+  <form id="loginForm" action="https://hayaku.jp/login/verification" method="POST" class="form" novalidate>
+
+    <label for="email">メールアドレス<span class="required-star">*</span></label>
+    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+    <div id="emailError" class="error-message" style="display:none;">有効なメールアドレスを入力してください。</div>
+
+    <label for="password">パスワード<span class="required-star">*</span></label>
+    <input type="password" id="password" name="password" placeholder="パスワードを入力してください" required>
+    <div id="passwordError" class="error-message" style="display:none;">パスワードを入力してください。</div>
+
+    <input type="submit" value="ログイン">
+  </form>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+
+    form.addEventListener('submit', function(e) {
+      let valid = true;
+      emailError.style.display = 'none';
+      passwordError.style.display = 'none';
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailPattern.test(email.value)) {
+        emailError.style.display = 'block';
+        valid = false;
+      }
+
+      if (!password.value.trim()) {
+        passwordError.style.display = 'block';
+        valid = false;
+      }
+
+      if (!valid) {
+        e.preventDefault();
+      }
+    });
+  </script>
+
+  <div class="copyright">
+    © 2025 HAYAI™ All rights reserved.
+  </div>
+
+</body>
+</html>

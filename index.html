@@ -1,1 +1,443 @@
-hello world
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAYAI™ BGIP – ホーム</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <script async data-id="101494071" src="//static.getclicky.com/js"></script>
+  <style>
+  html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+    font-family: 'Poppins', "MS Gothic", sans-serif;
+    background-color: #f9f9f9;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+    width: 100%;
+
+    .aboutus {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 2rem 0rem 2rem 0rem;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-header h2 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.info-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.info-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.info-content li {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cta-button {
+  background-color: #dc33ff;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #dc7bff;
+}
+
+@media (max-width: 768px) {
+  .aboutus {
+    padding: 2rem 0rem 2rem 0rem;
+  }
+
+  .info-header h2 {
+    font-size: 36px;
+  }
+
+  .info-content p {
+    font-size: 18px;
+  }
+
+  .info-content li {
+    font-size: 16px;
+  }
+}
+    }
+  </style>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.querySelector('.nav-logo');
+  let angle = 0;
+  window.addEventListener('scroll', () => {
+    angle += window.scrollY * 0.001;
+    logo.style.transform = `rotate(${angle}rad)`;
+  });
+
+  const slides = document.querySelectorAll('.carousel-slide');
+  let idx = 0;
+  setInterval(() => {
+    slides[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+  }, 5000);
+
+  const hamburger = document.getElementById('hamburger');
+  const navRight = document.querySelector('.nav-right');
+
+  hamburger.addEventListener('click', () => {
+    navRight.classList.toggle('active');
+  });
+
+  const navLinks = document.querySelectorAll('.nav-link, .btn-login, .btn-signup');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navRight.classList.remove('active');
+    });
+  });
+});
+
+function scrollToCategory(id) {
+  const targetElement = document.getElementById(id);
+  if (!targetElement) return;
+
+  const offset = 75;
+  const targetPosition = targetElement.offsetTop - offset;
+
+  window.scrollTo({
+    top: targetPosition,
+    behavior: "smooth"
+  });
+}
+  </script>
+</head>
+<body>
+<header class="navbar" style="display: none;">
+  <div class="nav-right">
+    <a href="#" onclick="scrollToCategory('about'); return false;" class="nav-link">HAYAI™とは？</a>
+    <a href="#" onclick="scrollToCategory('categories'); return false;" class="nav-link">サービスカテゴリ</a>
+    <a href="#" onclick="scrollToCategory('how-it-works'); return false;" class="nav-link">ご利用の流れ</a>
+    <a href="#" onclick="scrollToCategory('success-stories'); return false;" class="nav-link">成功事例</a>
+    <a href="faq" class="nav-link">よくあるご質問</a>
+    <a href="contact" class="nav-link">お問い合わせ</a>
+    <a href="login" class="btn btn-login">ログイン</a>
+    <a href="invite" class="btn btn-signup">招待登録</a>
+  </div>
+</header>
+
+<header class="navbar">
+  <div class="nav-left">
+    <img src="img/icon.png" class="nav-logo">
+    <img src="img/logo_text.png" class="nav-text-logo" draggable="false">
+  </div>
+
+  <div id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-right">
+    <a href="#" onclick="scrollToCategory('about'); return false;" class="nav-link">HAYAI™とは？</a>
+    <a href="#" onclick="scrollToCategory('categories'); return false;" class="nav-link">サービスカテゴリ</a>
+    <a href="#" onclick="scrollToCategory('how-it-works'); return false;" class="nav-link">ご利用の流れ</a>
+    <a href="#" onclick="scrollToCategory('success-stories'); return false;" class="nav-link">成功事例</a>
+    <a href="faq" class="nav-link">よくあるご質問</a>
+    <a href="contact" class="nav-link">お問い合わせ</a>
+    <a href="login" class="btn btn-login">ログイン</a>
+    <a href="invite" class="btn btn-signup">招待登録</a>
+  </div>
+</header>
+<section class="aboutus">
+<section class="carousel">
+  <img src="img/carousel_1.jpg" class="carousel-slide active">
+  <img src="img/carousel_2.jpg" class="carousel-slide">
+  <img src="img/carousel_3.jpg" class="carousel-slide">
+  <img src="img/carousel_4.jpg" class="carousel-slide">
+</section>
+
+  <div class="info-header" id="about">
+    <h2>HAYAI™とは？</h2>
+  </div>
+  <div class="info-content" style="padding: 0rem 5rem 0rem 5rem;">
+    <p>HAYAI™ BGIPは、サービス提供者とクライアントをつなぐ革新的なプラットフォームです。  
+       私たちは、経験豊富なサービス提供者の成長を支援するため、さまざまなツールとリソースを提供しています。  
+       これまでに100名以上の業界トップクラスで経験豊富なプロフェッショナルを支援しており、現在も国内の幅広い分野の優秀な方々を対象に支援の輪を広げています。<br>
+       <br>
+       従来のオープン型プラットフォームとは異なり、HAYAI™は厳選されたプロフェッショナルのみ参加可能な完全招待制です。専門チームによる審査を通過したサービス提供者に、一対一の営業支援とリソースサポートを提供し、個人ブランドの構築や高品質なクライアントの獲得を強力にサポートします。<br>
+       <br>
+       HAYAI™ BGIP - 高いスキルを持つサービス提供者のための、ビジネスの「ホーム」。
+</p><br>
+    <a href="faq" class="cta-button">もっと詳しく見る</a>
+    <p>
+  </div>
+</section>
+
+<p></p>
+  <section class="intro">
+    <div class="intro-img">
+      <img src="img/offer.jpg" width="400" height="400">
+    </div>
+    <div class="intro-text">
+      <h2>HAYAI™で最初の案件をゲットして、<br>一緒に成長しよう！</h2>
+      <p>HAYAI™は多くの優れたサービス提供者を支援し、私たちのサポートを通じて、より楽で安定し、効率的な働き方の実現を可能にしました。</p>
+      <ul>
+      <li>安定したクライアント基盤の構築をサポート</li>
+      <li>マーケティング支援と案件紹介</li>
+      <li>信頼性の高い評価システム</li>
+      <li>効率的な契約ツールとテンプレート</li>
+      <li>長期的な競争力の強化</li>
+    </ul>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <h2 style="font-size: 50px; text-align: center;">サービスカテゴリ</h2>
+    <hr>
+    <div class="category-grid">
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 代行・生活サポート<span>（12人）</span></h3>
+        <p>掃除代行・引っ越し・買物代行・事務代行・書類提出代行 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 工事・住まいサービス<span>（16人）</span></h3>
+        <p>内装工事・塗装工事・内装修理・家電設置・家具設置 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> コンサル・専門相談<span>（11人）</span></h3>
+        <p>マーケティング・ビジネス相談・法律相談・商標登録・起業支援・税務相談 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 交流・体験サービス<span>（19人）</span></h3>
+        <p>話し相手・ゲームプレイ・観光ガイド・イベント企画・ビデオ通話 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 動画撮影・編集<span>（9人）</span></h3>
+        <p>広告動画、プロモーション動画、SNSコンテンツ、ショート動画の撮影・編集、3Dアニメーション制作 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 教育・トレーニング<span>（6人）</span></h3>
+        <p>宿題サポートチュータリング・試験対策チュータリング・大學入學輔導・職場研修 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> IT・クリエイティブ<span>（15人）</span></h3>
+        <p>Web制作・デザイン・アプリ開発・動画制作・AI活用支援・ERP/CRM開発 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 翻訳・通訳サービス<span>（6人）</span></h3>
+        <p>日英翻訳・技術翻訳・通訳同行・字幕翻訳・翻訳チェック など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 声優・キャラクターボイス<span>（3人）</span></h3>
+      <p>アニメ声・ゲームCV・ボイスドラマ・キャラ演技・台詞読み上げ など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 音楽・BGM制作<span>（2人）</span></h3>
+      <p>オリジナルBGM・音声編集・ジングル制作・効果音・作曲依頼 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> イベント・催事サポート<span>（3人）</span></h3>
+        <p>イベントスタッフ・会場設営・受付代行・運営補助 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> AI導入・業務DX支援<span>（5人）</span></h3>
+        <p>中小企業向けのAI活用支援、業務プロセスの自動化、チャットボット導入、データ分析支援、業務効率化コンサルティング など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> ペット・動物ケア<span>（2人）</span></h3>
+        <p>ペットシッター・しつけ相談・ペット送迎・トリミング予約代行 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> データ入力・文字起こし<span>（4人）</span></h3>
+        <p>音声文字起こし・手書きデータ入力・議事録作成・名刺入力 など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 資料作成・プレゼン支援<span>（7人）</span></h3>
+        <p>パワポ資料作成・営業資料整理・企画書ブラッシュアップ など</p>
+      </div>
+      <div class="category-item">
+        <h3><img src="img/icon.png" width="25" height="25" style="vertical-align: middle;"> 写真修正・画像加工<span>（5人）</span></h3>
+        <p>レタッチ・画像合成・背景削除・商品画像補正・SNS用加工 など</p>
+      </div>
+
+    </div>
+    <div class="category-note">
+      <p>サービス提供者の取引機会を最大限に確保するために、HAYAI™は経験豊富なサービス提供者に対して、1対1の営業支援およびプロモーション投資を行い、同業者間での過度な競争を回避します。</p>
+      <p>現在、プラットフォーム上ではサービス提供者のランキング情報や関連プロジェクトは公開されておらず、正式なアカウントを取得したサービス提供者のみが、自身のプロフィールから業界内でのランキングを確認することができます。</p>
+    </div>
+  </section>
+
+<section class="categories" id="how-it-works">
+  <h2 style="font-size: 50px; text-align: center;">ご利用の流れ</h2>
+  <hr>
+  <div>
+    <div style="align-items: center;">
+
+    <div class="category-grid">
+      <div class="category-item" style="text-align: center;">
+        <font style="font-size: 20px;">STEP 1</font><br><font style="font-size: 25px;">本人確認書類提出</font><br>
+        <img src="img/step1.png" width="160" height="160"><br>
+        <font style="font-size: 16px;">本人確認書類の審査は1〜3営業日で完了します。</font><p></p>
+      </div>
+      <div class="category-item" style="text-align: center;">
+        <font style="font-size: 20px;">STEP 2</font><br><font style="font-size: 25px;">面談による資格審査</font><br>
+        <img src="img/step2.png" width="160" height="160"><br>
+        <font style="font-size: 16px;">資格審査のオンライン面談は30〜45分程度行われます。</font><p></p>
+      </div>
+      <div class="category-item" style="text-align: center;">
+        <font style="font-size: 20px;">STEP 3</font><br><font style="font-size: 25px;">保証金の支払い</font><br>
+        <img src="img/step3.png" width="160" height="160"><br>
+        <font style="font-size: 16px;">保証金は業界により10万〜50万円で設定されています。</font><p></p>
+      </div>
+      <div class="category-item" style="text-align: center;">
+        <font style="font-size: 20px;">STEP 4</font><br><font style="font-size: 25px;">公式認定の取得</font><br>
+        <img src="img/step4.png" width="160" height="160"><br>
+        <font style="font-size: 16px;">審査通過後、BGIPジネス成長投資プログラムが開始されます。</font><p></p>
+      </div>
+    </div>
+    <div style="max-width: 1024px; margin: 1rem auto; line-height: 1.8; font-size: 1rem; text-align: center; padding: 0 1rem;">
+    ご契約はすべてオンラインで完結。認定後は、最短で即日からプログラムの各種支援をご利用いただけます。成果報酬型のため、初期費用やリスクは一切ありません。サービス提供に専念しながら、案件紹介、契約ツール、信頼評価システムをフル活用いただけます。
+  </div>
+  </div>
+</section>
+<div>
+  <section class="testimonials" id="success-stories">
+    <h2 style="font-size: 50px; text-align: center;">成功事例</h2>
+    <hr>
+    <div class="testi-grid">
+      <div class="testi-item">
+        <img src="img/industries_01.jpg">
+        <h4>高橋愛</h4>
+        <p>資深數位行銷顧問</p>
+        <p>「HAYAIのおかげで、新しい案件が増え、安定した毎日を送れています。感謝しています！」</p>
+      </div>
+      <div class="testi-item">
+        <img src="img/industries_02.jpg">
+        <h4>渡辺拓海</h4>
+        <p>資深塗装専門家</p>
+        <p>「プラットフォームの投資によって、信頼されるパートナーとして認められました。本当にありがとうございます！」</p>
+      </div>
+      <div class="testi-item">
+        <img src="img/industries_03.jpg">
+        <h4>山本健太 (Michael)</h4>
+        <p>広告プロデューサー</p>
+        <p>「案件の質が飛躍的に向上し、自信を持てるようになりました。HAYAIに感謝です！」</p>
+      </div>
+      <div class="testi-item">
+        <img src="img/industries_04.jpg">
+        <h4>加藤結衣</h4>
+        <p>資深掃除代行チーム代表</p>
+        <p>「チームの活動がさらに広がり、多くのお客様と出会えました。心から感謝しています。」</p>
+      </div>
+
+      <div class="testi-item">
+        <img src="img/industries_05.jpg">
+        <h4>鈴木花子</h4>
+        <p>家庭教師</p>
+        <p>「プラットフォームのサポートをもらってから、ますますこの仕事が好きになったよ。子どもたちの成長を見るのが嬉しいんだ。」</p>
+      </div>
+      <div class="testi-item">
+        <img src="img/industries_06.jpg">
+        <h4>中村拓也</h4>
+        <p>ソフトウェアエンジニア</p>
+        <p>「普段あまり話さないし、人と関わるのは苦手だけど、HAYAIがすごく助けてくれたよ。ありがとうございます。」</p>
+      </div>
+      <div class="testi-item">
+        <img src="img/industries_07.jpg">
+        <h4>小林 翔</h4>
+        <p>電気工事士</p>
+        <p>「業務量が明らかに増えており、今後もHAYAIと共に成長していくつもりです」</p>
+      </div>
+      <div class="testi-item">
+        <img src="img/industries_08.jpg">
+        <h4>加藤 健</h4>
+        <p>民事弁護士</p>
+        <p>「普段の案件がたくさんあって、基本的に忙しくて手が回らないんだ。でもここでいいお客さんにたくさん出会えて、プラットフォームの助けに感謝してるよ。」</p>
+      </div>
+    </div>
+  </section>
+
+  <p></p>
+  <section class="banner-large">
+    <img src="img/banner_local.jpg">
+  </section>
+
+    <h2 style="font-size: 40px; text-align: center;">HAYAI™公式商談用会議室</h2>
+    <hr>
+<section class="meeting-room">
+  <div class="meeting-info">
+    <p><b>サービス提供者とお客様の商談用会議室（無料）</b><br>
+      HAYAI™は面談用の公式会議室または提携先スペースを無料で提供しています。6～8名まで収容可能で、無料Wi‑Fi・モニター・ホワイトボード・飲料水が備わっています。繁忙期には事前予約が必要です。
+  <img src="img/meeting_room.jpg" style="border-radius:20px; width: 100%; height: auto;"><br>
+  <img src="img/shibuya.jpg" style="border-radius:20px; width: 100%; height: auto;">
+    </p>
+      <h2>東京都 渋谷区 桜丘町４−１４</h2>
+      <p><b>最寄り駅：</b>JR渋谷駅（新南口）徒歩2分／東京メトロ（銀座線・半蔵門線）徒歩6分 / 東京メトロ（半蔵門線）徒歩6分</p>
+      <p><b>受付時間：</b>平日 10:00〜18:00（土日・祝日除く）</p>
+      <p>何かご不明な点がありましたら、<a href="contact" class="footer-links">お問い合わせ</a>までご連絡ください。</p>
+    </div>
+  </section>
+  
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.carousel-slide');
+  let idx = 0;
+
+  setInterval(() => {
+    slides[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+  }, 5000);
+});
+</script>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://tawk.to/chat/686cfb6145517119140d07a1/1ivkrbtd0';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+  <footer class="site-footer">
+    <div class="store-links">
+      <a href="https://apps.apple.com/" target="_blank"><img src="img/appstore.png" width="150" height="45"></a>&nbsp;
+      <a href="https://play.google.com/store/apps" target="_blank"><img src="img/playstore.png" width="150" height="45"></a>
+    </div>
+    <p></p>
+    <div class="footer-links">
+      <a href="faq">HAYAI™とは？</a>｜<a href="contact">お問い合わせ</a>｜<a href="terms">ユーザー利用規約</a>｜<a href="privacy">プライバシーポリシー</a>
+    </div>
+    <div class="copyright">
+    ※本サイトは、SSL暗号化通信およびreCAPTCHAによってお客様の情報を保護しており、<br>
+    Googleのプライバシーポリシーおよび利用規約が適用されます。<br>
+    © 2025 HAYAI™ All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
