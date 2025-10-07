@@ -1065,8 +1065,8 @@ max-width: calc(20% - 1px);
   margin-top: -16px;
 }
 
-.footer-links { font-size: 8px; color:#dd33ff;}
-.footer-links p { font-size: 8px; color:#dd33ff;}
+.footer-links { font-size: 12px; color:#dd33ff;}
+.footer-links p { font-size: 12px; color:#dd33ff;}
 .footer-links a { font-size: 12px; color:#dd33ff; transition: color 0.3s; }
 .footer-links a:hover { color:#f27bff; }
 
