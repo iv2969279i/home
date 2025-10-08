@@ -1069,7 +1069,7 @@ max-width: calc(20% - 1px);
 .footer-links p { font-size: 12px; color:#dd33ff;}
 .footer-links a { font-size: 12px; color:#dd33ff; transition: color 0.3s;}
 .footer-links a:hover { color:#f27bff; }
-.site-footer { text-align: center;}
+.site-footer { text-align: center; margin-top: -16px;}
 .site-footer img:hover { filter: brightness(1.1);}
 .copyright {
 text-align: center;
