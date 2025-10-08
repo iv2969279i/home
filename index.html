@@ -431,8 +431,9 @@ s0.parentNode.insertBefore(s1,s0);
       <a href="https://apps.apple.com/" target="_blank"><img src="img/appstore.png" width="150" height="45"></a>&nbsp;
       <a href="https://play.google.com/store/apps" target="_blank"><img src="img/playstore.png" width="150" height="45"></a>
     </div>
+<div id="footer"></div>
 <script>
-  fetch('footer.html')
+  fetch('../../footer.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer').innerHTML = data;
