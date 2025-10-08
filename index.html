@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HAYAI™ BGIP – ホーム</title>
   <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
   <link rel="stylesheet" href="style.css" />
   <script async data-id="101494071" src="//static.getclicky.com/js"></script>
   <style>
@@ -423,21 +424,21 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-
+<hr>
+ <p></p>
   <footer class="site-footer">
-    <div class="store-links">
+    <div>
       <a href="https://apps.apple.com/" target="_blank"><img src="img/appstore.png" width="150" height="45"></a>&nbsp;
       <a href="https://play.google.com/store/apps" target="_blank"><img src="img/playstore.png" width="150" height="45"></a>
     </div>
-    <p></p>
-    <div class="footer-links">
-      <a href="faq">HAYAI™とは？</a>｜<a href="contact">お問い合わせ</a>｜<a href="terms">ユーザー利用規約</a>｜<a href="privacy">プライバシーポリシー</a>
-    </div>
-    <div class="copyright">
-    ※本サイトは、SSL暗号化通信およびreCAPTCHAによってお客様の情報を保護しており、<br>
-    Googleのプライバシーポリシーおよび利用規約が適用されます。<br>
-    © 2025 HAYAI™ All rights reserved.
-    </div>
-  </footer>
+<div id="footer"></div>
+<script>
+  fetch('../../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => console.error('© 2025 HAYAI™ All rights reserved.', error));
+</script>
 </body>
 </html>
